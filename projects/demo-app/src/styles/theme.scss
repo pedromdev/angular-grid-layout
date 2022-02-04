@@ -1,4 +1,5 @@
-@import '~@angular/material/theming';
+@use 'variables' as variables;
+@import '@angular/material/theming';
 
 $app-primary: mat-palette($mat-orange, 500);
 $app-accent:  mat-palette($mat-orange, 300);
@@ -21,3 +22,7 @@ $app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
 
 // Specifies the theming for angular material components
 @include angular-material-theme($app-theme);
+
+body {
+    @include variables.cssVariables($app-theme)
+}
